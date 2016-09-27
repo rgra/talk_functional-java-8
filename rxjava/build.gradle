@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'io.reactivex.rxjava2:rxjava:2.0.0-RC3'
+    compile project(':model')
+
+    testCompile 'junit:junit:4.12'
+}

@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.paumard:more-spliterators:0.2'
+    compile project(':model')
+
+    testCompile 'junit:junit:4.12'
+}

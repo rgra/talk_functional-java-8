@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'io.github.amaembo:streamex:0.4.1'
+    compile project(':model')
+
+    testCompile 'junit:junit:4.12'
+}

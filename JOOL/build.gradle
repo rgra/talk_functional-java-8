@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+	compile 'org.jooq:jool:0.9.12'
+	compile project(':model')
+
+    testCompile 'junit:junit:4.12'
+}

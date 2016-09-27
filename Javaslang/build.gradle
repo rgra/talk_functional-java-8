@@ -1,0 +1,14 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'io.javaslang:javaslang:2.0.3'
+    compile project(':model')
+
+    testCompile 'junit:junit:4.12'
+}
+
+
