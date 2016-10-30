@@ -5,7 +5,7 @@ repositories {
 }
 
 dependencies {
-    compile 'io.javaslang:javaslang:2.0.3'
+    compile 'io.javaslang:javaslang:2.0.4'
     compile project(':model')
 
     testCompile 'junit:junit:4.12'

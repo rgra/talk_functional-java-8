@@ -13,6 +13,7 @@ import java.text.MessageFormat;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.MonthDay;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -38,10 +39,37 @@ public class List2Map {
 
 		map.entrySet().stream()
 			.filter(e -> e.getValue().size() > 1)
+			.sorted(Comparator.comparing(Map.Entry::getKey))
 			.forEach(e -> sendMail(e.getKey(), e.getValue()));
 
 	}
 
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	private static void sendMail(MonthDay date, List<Employee> persons) {
 		String emails = persons.stream().map(Employee::getEmail)
 			.collect(joining(";"));
