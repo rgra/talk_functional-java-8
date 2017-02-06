@@ -6,6 +6,7 @@ repositories {
 
 dependencies {
     compile 'org.paumard:more-spliterators:0.2'
+    compile 'org.paumard:collectors-utils:1.0'
     compile project(':model')
 
     testCompile 'junit:junit:4.12'
