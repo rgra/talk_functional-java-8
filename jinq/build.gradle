@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.jinq:jinq-jooq:1.8.16'
+    compile 'org.jooq:jooq:3.3.2'
+    compile 'org.jooq:jooq-meta:3.3.2'
+    compile 'org.jooq:jooq-codegen:3.3.2'
+    compile 'org.jooq:jooq-codegen:3.3.2'
+    
+	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
+    
+    
+    testCompile 'junit:junit:4.12'
+}
