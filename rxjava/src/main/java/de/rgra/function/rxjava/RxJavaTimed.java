@@ -7,8 +7,9 @@ import io.reactivex.Observable;
 public class RxJavaTimed {
 
 	public static void main(String[] args) {
-		Observable<String> list = Observable.just("Rabea", "vJUG", "RxJava").repeat(20);
 		Observable<Long> timer = Observable.interval(1, TimeUnit.SECONDS);
+		Observable<String> list = Observable.just("+++", "***", "###")
+			.repeat(20);
 
 		Observable<String> timedNameEmitter = timer
 			.zipWith(list, (x, y) -> y);
@@ -26,7 +27,6 @@ public class RxJavaTimed {
 		// take 30 sec blocking
 		timedNameEmitter.take(30, TimeUnit.SECONDS)
 			.blockingSubscribe(System.out::println, e -> e.printStackTrace());
-
 	}
 
 }

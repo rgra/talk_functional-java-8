@@ -1,9 +1,11 @@
 package de.rgra.functional.junit;
 
+import static java.time.Duration.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
@@ -33,10 +35,17 @@ class AssertionsDemo {
 
 	@Test
 	void exceptionTesting() {
-		Throwable exception = expectThrows(IOException.class, () -> {
-			new URL("http://www.vjug26.com").openStream().read();
+		Throwable exception = assertThrows(FileNotFoundException.class, () -> {
+			new URL("http://127.0.0.1").openStream().read();
 		});
-		assertEquals("www.vjug26.com", exception.getMessage());
+		assertEquals("http://127.0.0.1", exception.getMessage());
+	}
+
+	@Test
+	void timeoutExceeded() {
+		assertTimeout(ofMillis(10), () -> {
+			TimeUnit.MILLISECONDS.sleep(100);
+		});
 	}
 
 }

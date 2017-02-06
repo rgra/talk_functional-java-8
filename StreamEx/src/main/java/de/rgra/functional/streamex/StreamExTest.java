@@ -16,11 +16,11 @@ import java.time.MonthDay;
 import java.util.List;
 import java.util.Map;
 
-import javax.util.streamex.EntryStream;
-import javax.util.streamex.StreamEx;
-
 import de.rgra.functional.model.Employee;
 import de.rgra.functional.model.EmployeeRegister;
+
+import one.util.streamex.EntryStream;
+import one.util.streamex.StreamEx;
 
 /**
  * @author gransberger

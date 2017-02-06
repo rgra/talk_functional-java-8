@@ -45,9 +45,8 @@ public class DynamicTestFactory {
 	@TestFactory
 	@DisplayName("all Fibonacci numbers are odd")
 	Stream<DynamicTest> testFactory() {
-		return IntStream.range(1, 20)
-			.map(this::fibonacci)
-			.mapToObj(fibo -> dynamicTest("Fibonacci = " + fibo, () -> testIsOdd(fibo)));
+		return IntStream.rangeClosed(1, 20)
+			.mapToObj(n -> dynamicTest("Fibonacci(" + n + ")", () -> testIsOdd(fibonacci(n))));
 	}
 
 	public int fibonacci(int n) {

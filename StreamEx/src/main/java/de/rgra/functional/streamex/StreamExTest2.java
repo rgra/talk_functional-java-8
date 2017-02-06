@@ -16,10 +16,10 @@ import java.time.LocalDate;
 import java.time.MonthDay;
 import java.util.List;
 
-import javax.util.streamex.StreamEx;
-
 import de.rgra.functional.model.Employee;
 import de.rgra.functional.model.EmployeeRegister;
+
+import one.util.streamex.StreamEx;
 
 /**
  * @author gransberger

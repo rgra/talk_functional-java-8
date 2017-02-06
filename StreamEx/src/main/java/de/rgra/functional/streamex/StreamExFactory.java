@@ -17,7 +17,7 @@ import java.nio.file.Paths;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-import javax.util.streamex.StreamEx;
+import one.util.streamex.StreamEx;
 
 /**
  * @author gransberger

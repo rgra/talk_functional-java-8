@@ -14,7 +14,7 @@ public class RxJavaPlayground {
 			.subscribe(System.out::println);
 		observable
 			.subscribe(System.out::println);
-
+		
 		// onErrorResumeNext
 		Observable<String> errorObservable = Observable.just("1", "2", "3")
 			.concatWith(Observable.error(new RuntimeException("Test")));

@@ -34,14 +34,13 @@ public class List2Map {
 		Month currentMonth = LocalDate.now().getMonth();
 
 		Map<MonthDay, List<Employee>> map = persons.stream()
-			.filter(e -> e.getBirthday().getMonth() == currentMonth)
-			.collect(groupingBy(e -> MonthDay.from(e.getBirthday())));
+			.filter(p -> p.getBirthday().getMonth() == currentMonth)
+			.collect(groupingBy(p -> MonthDay.from(p.getBirthday())));
 
 		map.entrySet().stream()
 			.filter(e -> e.getValue().size() > 1)
 			.sorted(Comparator.comparing(Map.Entry::getKey))
 			.forEach(e -> sendMail(e.getKey(), e.getValue()));
-
 	}
 
 	//

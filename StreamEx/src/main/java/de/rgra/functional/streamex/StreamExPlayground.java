@@ -12,10 +12,10 @@ import static java.util.stream.Collectors.*;
 
 import java.util.stream.Stream;
 
-import javax.util.streamex.StreamEx;
-
 import de.rgra.functional.model.Employee;
 import de.rgra.functional.model.EmployeeRegister;
+
+import one.util.streamex.StreamEx;
 
 /**
  * @author gransberger

@@ -5,7 +5,7 @@ repositories {
 }
 
 dependencies {
-    compile 'io.github.amaembo:streamex:0.4.1'
+    compile 'one.util:streamex:0.6.5'
     compile project(':model')
 
     testCompile 'junit:junit:4.12'
