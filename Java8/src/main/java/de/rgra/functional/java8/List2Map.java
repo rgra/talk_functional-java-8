@@ -13,9 +13,7 @@ import java.text.MessageFormat;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.MonthDay;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 
 import de.rgra.functional.model.Employee;
 import de.rgra.functional.model.EmployeeRegister;
@@ -33,14 +31,8 @@ public class List2Map {
 		List<Employee> persons = EmployeeRegister.getPersons(toList());
 		Month currentMonth = LocalDate.now().getMonth();
 
-		Map<MonthDay, List<Employee>> map = persons.stream()
-			.filter(p -> p.getBirthday().getMonth() == currentMonth)
-			.collect(groupingBy(p -> MonthDay.from(p.getBirthday())));
 
-		map.entrySet().stream()
-			.filter(e -> e.getValue().size() > 1)
-			.sorted(Comparator.comparing(Map.Entry::getKey))
-			.forEach(e -> sendMail(e.getKey(), e.getValue()));
+
 	}
 
 	//
@@ -67,6 +59,33 @@ public class List2Map {
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	// Map<MonthDay, List<Employee>> map = persons.stream()
+	// .filter(p -> p.getBirthday().getMonth() == currentMonth)
+	// .collect(groupingBy(p -> MonthDay.from(p.getBirthday())));
+	//
+	// map.entrySet().stream()
+	// .filter(e -> e.getValue().size() > 1)
+	// .sorted(Comparator.comparing(Map.Entry::getKey))
+	// .forEach(e -> sendMail(e.getKey(), e.getValue()));
 	//
 	//
 	private static void sendMail(MonthDay date, List<Employee> persons) {

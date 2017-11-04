@@ -1,0 +1,9 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+dependencies {
+	compile 'org.jdeferred:jdeferred-core:1.2.4'
+	compile 'org.slf4j:slf4j-simple:1.8.0-beta0'
+}

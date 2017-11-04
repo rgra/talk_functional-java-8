@@ -5,7 +5,7 @@ repositories {
 }
 
 dependencies {
-    compile 'one.util:streamex:0.6.5'
+    compile 'one.util:streamex:0.6.6'
     compile project(':model')
 
     testCompile 'junit:junit:4.12'

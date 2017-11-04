@@ -5,13 +5,12 @@ repositories {
 }
 
 dependencies {
-    compile 'org.jinq:jinq-jooq:1.8.16'
-    compile 'org.jooq:jooq:3.3.2'
-    compile 'org.jooq:jooq-meta:3.3.2'
-    compile 'org.jooq:jooq-codegen:3.3.2'
-    compile 'org.jooq:jooq-codegen:3.3.2'
+    compile 'org.jinq:jinq-jooq:1.8.22'
+    compile 'org.jooq:jooq:3.10.1'
+    compile 'org.jooq:jooq-meta:3.10.1'
+    compile 'org.jooq:jooq-codegen:3.10.1'
     
-	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
+	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.44'
     
     
     testCompile 'junit:junit:4.12'

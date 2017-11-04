@@ -21,30 +21,33 @@ import java.util.concurrent.Executors;
  */
 public class Futures {
 
-	public static void main(String[] args) {
-		CompletableFuture<List<String>> future = readList();
+    public static void main(String[] args) {
+        CompletableFuture<List<String>> future = readList();
 
-		future
-			.thenApply(list -> "List read: " + list.size())
-			.exceptionally(t -> "Failed: " + t.getMessage())
-			.thenAccept(System.out::println);
-	}
+        future.thenApply(list -> list.toString())
+            .thenAccept(System.out::println);
 
-	private static CompletableFuture<List<String>> readList() {
-		CompletableFuture<List<String>> future = new CompletableFuture<>();
-		ExecutorService pool = Executors.newSingleThreadExecutor();
+        future
+            .thenApply(list -> "List read: " + list.size())
+            .exceptionally(t -> "Failed: " + t.getMessage())
+            .thenAccept(System.out::println);
+    }
 
-		pool.submit(() -> {
-			try {
-				future.complete(Files.readAllLines(Paths.get("D:", "test.csv")));
-			}
-			catch (IOException e) {
-				future.completeExceptionally(e);
-			}
-		});
-		pool.shutdown();
+    private static CompletableFuture<List<String>> readList() {
+        CompletableFuture<List<String>> future = new CompletableFuture<>();
+        ExecutorService pool = Executors.newSingleThreadExecutor();
 
-		return future;
-	}
+        pool.submit(() -> {
+            try {
+                future.complete(Files.readAllLines(Paths.get("D:", "test.csv")));
+            }
+            catch (IOException e) {
+                future.completeExceptionally(e);
+            }
+        });
+        pool.shutdown();
+
+        return future;
+    }
 
 }
