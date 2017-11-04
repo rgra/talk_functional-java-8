@@ -1,0 +1,54 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.1'
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+ext.junit4Version        = '4.12'
+ext.junitVintageVersion  = '4.12.1'
+ext.junitPlatformVersion = '1.0.1'
+ext.junitJupiterVersion  = '5.0.1'
+ext.log4jVersion         = '2.9.0'
+
+apply plugin: 'java'
+apply plugin: 'org.junit.platform.gradle.plugin'
+
+dependencies {
+	compile 'org.jooq:jool:0.9.12'
+	//compile project(':model')
+	
+	compile 'org.jdeferred:jdeferred-core:1.2.4'
+	compile 'org.slf4j:slf4j-simple:1.8.0-beta0'
+	
+	compile 'io.vavr:vavr:0.9.1'
+    
+    compile 'io.reactivex.rxjava2:rxjava:2.1.6'
+	compile "io.vertx:vertx-core:3.5.0"
+	  compile "io.vertx:vertx-web:3.5.0"
+
+	// JUnit Jupiter API and TestEngine implementation
+	testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+	testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+
+	// If you also want to support JUnit 3 and JUnit 4 tests
+	testCompile("junit:junit:${junit4Version}")
+	testRuntime("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")
+
+	// To avoid compiler warnings about @API annotations in JUnit code
+	testCompileOnly('org.apiguardian:apiguardian-api:1.0.0')
+
+	// To use Log4J's LogManager
+	testRuntime("org.apache.logging.log4j:log4j-core:${log4jVersion}")
+	testRuntime("org.apache.logging.log4j:log4j-jul:${log4jVersion}")
+
+	compile("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}")
+	compile("org.junit.platform:junit-platform-runner:${junitPlatformVersion}")
+}
+

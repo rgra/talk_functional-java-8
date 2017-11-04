@@ -16,6 +16,7 @@ sourceCompatibility = '1.8'
 
 dependencies {
   compile "io.vertx:vertx-core:$version"
+  compile "io.vertx:vertx-web:$version"
 }
 
 mainClassName = 'io.vertx.example.HelloWorldEmbedded'

@@ -1,4 +1,4 @@
-package de.rgra.function.rxjava;
+package io.github.rgra.live;
 
 import java.util.concurrent.TimeUnit;
 
